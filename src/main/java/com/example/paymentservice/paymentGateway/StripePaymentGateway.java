@@ -9,7 +9,12 @@ import com.stripe.model.billingportal.Session;
 import com.stripe.param.PaymentLinkCreateParams;
 import com.stripe.param.PriceCreateParams;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Primary
+@Component
 public class StripePaymentGateway implements PaymentGateway {
     @Value("${stripe.key.secret}")
     String apiSecret;
